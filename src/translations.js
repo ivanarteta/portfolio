@@ -59,6 +59,11 @@ export const translations = {
     courseSymfony: "Guía definitiva para crear APIs con Symfony 5 y API Platform",
     courseAWS: "AWS Certified Cloud Practitioner (CLF-C02)",
     hours: "horas",
+    languages: "🌐 Idiomas",
+    spanish: "Español",
+    native: "Nativo",
+    english: "Inglés",
+    englishCertification: "Cambridge B2 First",
     
     // Projects
     projectsTitle: "Proyectos",
@@ -162,6 +167,11 @@ export const translations = {
     courseSymfony: "Complete Guide to Creating APIs with Symfony 5 and API Platform",
     courseAWS: "AWS Certified Cloud Practitioner (CLF-C02)",
     hours: "hours",
+    languages: "🌐 Languages",
+    spanish: "Spanish",
+    native: "Native",
+    english: "English",
+    englishCertification: "Cambridge B2 First",
     
     // Projects
     projectsTitle: "Projects",
