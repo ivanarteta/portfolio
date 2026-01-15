@@ -103,6 +103,16 @@ export const translations = {
     contactTitle: "Contacto",
     contactSubtitle: "Conectemos y exploremos oportunidades juntos",
     downloadCV: "Descargar CV",
+    backToPortfolio: "Volver al portfolio",
+    formName: "Nombre",
+    formNamePlaceholder: "Tu nombre",
+    formEmail: "Email",
+    formEmailPlaceholder: "tu@email.com",
+    formSubject: "Asunto",
+    formSubjectPlaceholder: "Asunto del mensaje",
+    formMessage: "Mensaje",
+    formMessagePlaceholder: "Escribe tu mensaje aquí...",
+    formSubmit: "Enviar mensaje",
     
     // Footer
     footer: "© 2026 · Iván Arteta"
@@ -211,6 +221,16 @@ export const translations = {
     contactTitle: "Contact",
     contactSubtitle: "Let's connect and explore opportunities together",
     downloadCV: "Download CV",
+    backToPortfolio: "Back to portfolio",
+    formName: "Name",
+    formNamePlaceholder: "Your name",
+    formEmail: "Email",
+    formEmailPlaceholder: "your@email.com",
+    formSubject: "Subject",
+    formSubjectPlaceholder: "Message subject",
+    formMessage: "Message",
+    formMessagePlaceholder: "Write your message here...",
+    formSubmit: "Send message",
     
     // Footer
     footer: "© 2026 · Iván Arteta"

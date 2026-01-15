@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/arroba.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - Iván Arteta</title>
+  </head>
+  <body class="bg-neutral-900 text-white font-sans transition-colors duration-300">
+    
+    <!-- Language and Theme Toggle -->
+    <div class="fixed top-6 right-6 z-50 flex gap-3">
+      <!-- Language Toggle -->
+      <button 
+        id="lang-toggle"
+        class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+      >
+        <span id="lang-text">ES</span>
+      </button>
+      <!-- Theme Toggle -->
+      <button 
+        id="theme-toggle"
+        class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+      >
+        <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="py-32 px-6 min-h-screen">
+      <div class="max-w-4xl mx-auto">
+        <!-- Botón Volver -->
+        <a 
+          href="index.html" 
+          class="inline-flex items-center gap-2 mb-12 text-gray-400 hover:text-white transition-colors group"
+          data-i18n="backToPortfolio"
+        >
+          <svg class="w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          <span>Volver al portfolio</span>
+        </a>
+
+        <!-- Título -->
+        <h2 class="text-4xl font-bold mb-4 text-center" data-i18n="contactTitle">Contacto</h2>
+        <p class="text-xl text-gray-400 mb-12 text-center" data-i18n="contactSubtitle">
+          Conectemos y exploremos oportunidades juntos
+        </p>
+
+        <!-- Formulario -->
+        <div class="bg-neutral-800 rounded-2xl p-8 mb-12">
+          <form id="contact-form" class="space-y-6">
+            <!-- Nombre -->
+            <div>
+              <label for="user_name" class="block text-sm font-medium mb-2 text-white" data-i18n="formName">
+                Nombre
+              </label>
+              <input
+                type="text"
+                id="user_name"
+                name="user_name"
+                required
+                class="w-full px-6 py-4 bg-neutral-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition"
+                placeholder="Tu nombre"
+                data-i18n-placeholder="formNamePlaceholder"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="user_email" class="block text-sm font-medium mb-2 text-white" data-i18n="formEmail">
+                Email
+              </label>
+              <input
+                type="email"
+                id="user_email"
+                name="user_email"
+                required
+                class="w-full px-6 py-4 bg-neutral-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition"
+                placeholder="tu@email.com"
+                data-i18n-placeholder="formEmailPlaceholder"
+              />
+            </div>
+
+            <!-- Asunto -->
+            <div>
+              <label for="subject" class="block text-sm font-medium mb-2 text-white" data-i18n="formSubject">
+                Asunto
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                class="w-full px-6 py-4 bg-neutral-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition"
+                placeholder="Asunto del mensaje"
+                data-i18n-placeholder="formSubjectPlaceholder"
+              />
+            </div>
+
+            <!-- Mensaje -->
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2 text-white" data-i18n="formMessage">
+                Mensaje
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                class="w-full px-6 py-4 bg-neutral-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-transparent transition resize-none"
+                placeholder="Escribe tu mensaje aquí..."
+                data-i18n-placeholder="formMessagePlaceholder"
+              ></textarea>
+            </div>
+
+            <!-- Mensaje de feedback -->
+            <div id="form-message" class="hidden p-4 rounded-lg text-sm"></div>
+
+            <!-- Botón Enviar -->
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full px-8 py-4 bg-white text-black rounded-xl font-semibold hover:bg-gray-100 transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              data-i18n="formSubmit"
+            >
+              Enviar mensaje
+            </button>
+          </form>
+        </div>
+
+        <!-- Enlaces adicionales -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+          <!-- GitHub -->
+          <a 
+            href="https://github.com/ivanarteta" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-8 py-4 bg-neutral-800 rounded-xl hover:bg-neutral-700 transition-all hover:scale-105 w-full md:w-auto justify-center"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+            <span class="font-semibold">GitHub</span>
+          </a>
+          
+          <!-- LinkedIn -->
+          <a 
+            href="https://www.linkedin.com/in/iv%C3%A1n-arteta-triguero-8712a0207/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-8 py-4 bg-neutral-800 rounded-xl hover:bg-neutral-700 transition-all hover:scale-105 w-full md:w-auto justify-center"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span class="font-semibold">LinkedIn</span>
+          </a>
+          
+          <!-- CV -->
+          <a 
+            href="/cv.pdf" 
+            target="_blank"
+            class="group flex items-center gap-3 px-8 py-4 bg-white text-black rounded-xl hover:bg-gray-100 transition-all hover:scale-105 w-full md:w-auto justify-center font-semibold"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span data-i18n="downloadCV">Descargar CV</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/contact.js"></script>
+  </body>
+</html>

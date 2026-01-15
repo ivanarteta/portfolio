@@ -62,3 +62,21 @@ html.light-theme .bg-white {
 html.light-theme .text-black {
   color: var(--text-primary) !important;
 }
+
+html.light-theme input,
+html.light-theme textarea {
+  background-color: #ffffff !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.light-theme input::placeholder,
+html.light-theme textarea::placeholder {
+  color: var(--text-tertiary) !important;
+}
+
+html.light-theme input:focus,
+html.light-theme textarea:focus {
+  border-color: var(--text-primary) !important;
+  background-color: #ffffff !important;
+}
