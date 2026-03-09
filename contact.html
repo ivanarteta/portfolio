@@ -1,19 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/arroba.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Iván Arteta</title>
+    <meta name="description" content="Contacta con Iván Arteta - Team Lead e Ingeniero de Software. Formulario de contacto, enlaces a GitHub, LinkedIn y descarga de CV." />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contacto - Iván Arteta" />
+    <meta property="og:description" content="Contacta con Iván Arteta. Formulario de contacto, GitHub, LinkedIn y CV." />
+    <meta property="og:url" content="https://ivanarteta.dev/contact" />
+    <meta property="og:image" content="https://ivanarteta.dev/IVAN.jpg" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contacto - Iván Arteta" />
+    <meta name="twitter:description" content="Contacta con Iván Arteta. Formulario de contacto, GitHub, LinkedIn y CV." />
   </head>
   <body class="bg-neutral-900 text-white font-sans transition-colors duration-300">
     
+    <!-- Skip link (accesibilidad) -->
+    <a href="#contact-section" class="skip-link bg-white text-black" data-i18n="skipLink">Saltar al contenido</a>
+
     <!-- Language and Theme Toggle -->
     <div class="fixed top-6 right-6 z-50 flex gap-3">
       <!-- Language Toggle -->
       <button 
         id="lang-toggle"
         class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+        aria-label="Cambiar idioma"
+        data-i18n-aria-label="ariaLabelLang"
       >
         <span id="lang-text">ES</span>
       </button>
@@ -21,6 +37,8 @@
       <button 
         id="theme-toggle"
         class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+        aria-label="Cambiar tema"
+        data-i18n-aria-label="ariaLabelTheme"
       >
         <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -29,7 +47,7 @@
     </div>
 
     <!-- CONTACT SECTION -->
-    <section class="py-32 px-6 min-h-screen">
+    <section id="contact-section" class="py-32 px-6 min-h-screen">
       <div class="max-w-4xl mx-auto">
         <!-- Botón Volver -->
         <a 

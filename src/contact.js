@@ -6,12 +6,14 @@ import emailjs from '@emailjs/browser'
 let currentLang = localStorage.getItem('lang') || 'es'
 let currentTheme = localStorage.getItem('theme') || 'dark'
 
-const EMAILJS_PUBLIC_KEY = 'UxgNssHj94NSUva69' 
-const EMAILJS_SERVICE_ID = 'service_iym7isa' 
-const EMAILJS_TEMPLATE_ID = 'template_l970j2k'
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || ''
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ''
 
-// Inicializar EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY)
+// Inicializar EmailJS (solo si hay clave configurada)
+if (EMAILJS_PUBLIC_KEY) {
+  emailjs.init(EMAILJS_PUBLIC_KEY)
+}
 
 // Aplicar tema inicial
 function applyTheme(theme) {
@@ -74,6 +76,14 @@ function changeLanguage(lang) {
   if (langText) {
     langText.textContent = lang.toUpperCase()
   }
+
+  // Actualizar aria-labels (accesibilidad)
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label')
+    if (t[key]) {
+      el.setAttribute('aria-label', t[key])
+    }
+  })
 }
 
 // Toggle idioma
@@ -278,11 +288,9 @@ function init() {
     form.addEventListener('submit', handleSubmit)
   }
   
-  // Verificar si las credenciales de EmailJS están configuradas
-  if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
-      EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || 
-      EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-    console.warn('⚠️ EmailJS no está configurado. Por favor, actualiza las credenciales en src/contact.js')
+  // Verificar si las credenciales de EmailJS están configuradas (variables de entorno)
+  if (!EMAILJS_PUBLIC_KEY || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+    console.warn('⚠️ EmailJS no está configurado. Crea un archivo .env con VITE_EMAILJS_PUBLIC_KEY, VITE_EMAILJS_SERVICE_ID y VITE_EMAILJS_TEMPLATE_ID')
   }
 }
 

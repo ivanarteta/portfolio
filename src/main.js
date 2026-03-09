@@ -64,6 +64,14 @@ function changeLanguage(lang) {
   if (langText) {
     langText.textContent = lang.toUpperCase()
   }
+
+  // Actualizar aria-labels (accesibilidad)
+  document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria-label')
+    if (t[key]) {
+      el.setAttribute('aria-label', t[key])
+    }
+  })
 }
 
 // Toggle idioma
@@ -109,11 +117,34 @@ function init() {
   }
 }
 
+// Barra de navegación: mostrar al hacer scroll
+function setupNavScroll() {
+  const nav = document.getElementById('main-nav')
+  if (!nav) return
+
+  const showNav = () => {
+    if (window.scrollY > 80) {
+      nav.classList.remove('translate-y-[-100%]')
+      nav.classList.add('translate-y-0')
+    } else {
+      nav.classList.add('translate-y-[-100%]')
+      nav.classList.remove('translate-y-0')
+    }
+  }
+
+  window.addEventListener('scroll', showNav, { passive: true })
+  showNav() // estado inicial
+}
+
 // Inicializar cuando el DOM esté listo
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('DOMContentLoaded', () => {
+    init()
+    setupNavScroll()
+  })
 } else {
   init()
+  setupNavScroll()
 }
 
 // Función genérica para acordeones
@@ -130,10 +161,12 @@ function setupAccordion(toggleId, contentId, arrowId) {
         content.classList.remove('max-h-[2000px]')
         content.classList.add('max-h-0')
         arrow.classList.remove('rotate-180')
+        toggle.setAttribute('aria-expanded', 'false')
       } else {
         content.classList.remove('max-h-0')
         content.classList.add('max-h-[2000px]')
         arrow.classList.add('rotate-180')
+        toggle.setAttribute('aria-expanded', 'true')
       }
     })
   }

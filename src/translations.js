@@ -1,12 +1,18 @@
 export const translations = {
   es: {
+    // Accesibilidad
+    skipLink: "Saltar al contenido",
+    ariaLabelTheme: "Cambiar tema claro/oscuro",
+    ariaLabelLang: "Cambiar idioma",
+
     // Hero
     heroSubtitle: "Team Lead & Software Engineer · Dev Leadership · Full Stack · Arquitecturas Escalables · GIS",
     aboutMe: "Sobre mí",
     education: "Formación",
     projects: "Proyectos",
     contact: "Contacto",
-    
+    home: "Inicio",
+
     // About
     aboutTitle: "Sobre mí",
     aboutText1: "Soy <strong>Team Lead e Ingeniero de Software</strong> con experiencia liderando el desarrollo de proyectos tecnológicos complejos, gestionando equipos y definiendo arquitecturas robustas para plataformas críticas.",
@@ -118,13 +124,19 @@ export const translations = {
     footer: "© 2026 · Iván Arteta"
   },
   en: {
+    // Accesibilidad
+    skipLink: "Skip to content",
+    ariaLabelTheme: "Toggle light/dark theme",
+    ariaLabelLang: "Change language",
+
     // Hero
     heroSubtitle: "Team Lead & Software Engineer · Dev Leadership · Full Stack · Scalable Architectures · GIS",
     aboutMe: "About Me",
     education: "Education",
     projects: "Projects",
     contact: "Contact",
-    
+    home: "Home",
+
     // About
     aboutTitle: "About Me",
     aboutText1: "I am a <strong>Team Lead and Software Engineer</strong> with experience leading the development of complex technological projects, managing teams and defining robust architectures for mission-critical platforms.",

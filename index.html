@@ -1,12 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/arroba.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iván Arteta</title>
+    <title>Iván Arteta · Team Lead & Software Engineer</title>
+    <meta name="description" content="Iván Arteta - Team Lead e Ingeniero de Software. Liderazgo técnico, Full Stack, arquitecturas escalables y GIS. Experiencia en desarrollo web, móvil y gestión de equipos." />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iván Arteta · Team Lead & Software Engineer" />
+    <meta property="og:description" content="Team Lead e Ingeniero de Software. Liderazgo técnico, Full Stack, arquitecturas escalables y GIS. Portfolio y experiencia profesional." />
+    <meta property="og:url" content="https://ivanarteta.dev/" />
+    <meta property="og:image" content="https://ivanarteta.dev/IVAN.jpg" />
+    <meta property="og:locale" content="es_ES" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iván Arteta · Team Lead & Software Engineer" />
+    <meta name="twitter:description" content="Team Lead e Ingeniero de Software. Liderazgo técnico, Full Stack, arquitecturas escalables y GIS." />
+    <meta name="twitter:image" content="https://ivanarteta.dev/IVAN.jpg" />
   </head>
   <body class="bg-neutral-900 text-white font-sans transition-colors duration-300">
+
+      <!-- Skip link (accesibilidad) -->
+      <a href="#about" class="skip-link bg-white text-black" data-i18n="skipLink">Saltar al contenido</a>
+
+      <!-- Barra de navegación (visible al hacer scroll) -->
+      <nav id="main-nav" class="fixed top-0 left-0 right-0 z-40 py-4 px-6 bg-neutral-900/95 backdrop-blur-md border-b border-white/5 translate-y-[-100%] transition-transform duration-300" aria-label="Navegación principal">
+        <div class="max-w-4xl mx-auto flex items-center justify-between">
+          <a href="#" id="nav-home" class="text-lg font-semibold text-white hover:text-gray-300 transition" data-i18n="home">Inicio</a>
+          <div class="flex items-center gap-6">
+            <a href="#about" class="text-gray-300 hover:text-white transition text-sm font-medium" data-i18n="aboutMe">Sobre mí</a>
+            <a href="#education" class="text-gray-300 hover:text-white transition text-sm font-medium" data-i18n="education">Formación</a>
+            <a href="#projects" class="text-gray-300 hover:text-white transition text-sm font-medium" data-i18n="projects">Proyectos</a>
+            <a href="contact.html" class="text-gray-300 hover:text-white transition text-sm font-medium" data-i18n="contact">Contacto</a>
+          </div>
+        </div>
+      </nav>
 
       <!-- Language and Theme Toggle -->
       <div class="fixed top-6 right-6 z-50 flex gap-3">
@@ -14,6 +43,8 @@
         <button 
           id="lang-toggle"
           class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+          aria-label="Cambiar idioma"
+          data-i18n-aria-label="ariaLabelLang"
         >
           <span id="lang-text">ES</span>
         </button>
@@ -21,6 +52,8 @@
         <button 
           id="theme-toggle"
           class="px-4 py-2 bg-neutral-800/80 backdrop-blur-sm rounded-lg hover:bg-neutral-700 transition text-sm font-medium border border-white/10"
+          aria-label="Cambiar tema"
+          data-i18n-aria-label="ariaLabelTheme"
         >
           <svg id="theme-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -35,6 +68,8 @@
             <img 
               src="/IVAN.jpg" 
               alt="Iván Arteta" 
+              width="256"
+              height="256"
               class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -119,6 +154,9 @@
             <button 
               id="experience-toggle"
               class="w-full text-left flex items-center justify-between mb-4 group"
+              type="button"
+              aria-expanded="false"
+              aria-controls="experience-content"
             >
               <h3 class="text-2xl font-semibold text-white group-hover:text-gray-300 transition" data-i18n="experienceTitle">
                 💼 Experiencia Profesional
@@ -138,6 +176,8 @@
             <div 
               id="experience-content"
               class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+              role="region"
+              aria-labelledby="experience-toggle"
             >
               <div class="space-y-10">
                 <!-- Tesicnor - Actual -->
@@ -431,7 +471,10 @@
               <!-- Header del acordeón -->
               <button 
                 id="noe-toggle"
+                type="button"
                 class="w-full p-8 text-left flex items-center justify-between hover:bg-neutral-700 transition"
+                aria-expanded="false"
+                aria-controls="noe-content"
               >
                 <div class="flex-1">
                   <h3 class="text-2xl font-semibold mb-2" data-i18n="noeTitle">
@@ -456,6 +499,8 @@
               <div 
                 id="noe-content"
                 class="px-8 pb-8 border-t border-neutral-700 max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region"
+                aria-labelledby="noe-toggle"
               >
                 <div class="pt-6 space-y-6">
                   <!-- Rol como Team Lead -->
@@ -562,7 +607,10 @@
               <!-- Header del acordeón -->
               <button 
                 id="pamplona-toggle"
+                type="button"
                 class="w-full p-8 text-left flex items-center justify-between hover:bg-neutral-700 transition"
+                aria-expanded="false"
+                aria-controls="pamplona-content"
               >
                 <div class="flex-1">
                   <h3 class="text-2xl font-semibold mb-2" data-i18n="pamplonaTitle">
@@ -587,6 +635,8 @@
               <div 
                 id="pamplona-content"
                 class="px-8 pb-8 border-t border-neutral-700 max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region"
+                aria-labelledby="pamplona-toggle"
               >
                 <div class="pt-6 space-y-6">
                   <!-- Descripción del proyecto -->
@@ -630,7 +680,10 @@
               <!-- Header del acordeón -->
               <button 
                 id="servers-toggle"
+                type="button"
                 class="w-full p-8 text-left flex items-center justify-between hover:bg-neutral-700 transition"
+                aria-expanded="false"
+                aria-controls="servers-content"
               >
                 <div class="flex-1">
                   <h3 class="text-2xl font-semibold mb-2" data-i18n="serversTitle">
@@ -655,6 +708,8 @@
               <div 
                 id="servers-content"
                 class="px-8 pb-8 border-t border-neutral-700 max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+                role="region"
+                aria-labelledby="servers-toggle"
               >
                 <div class="pt-6 space-y-6">
                   <!-- Descripción del proyecto -->
@@ -716,8 +771,15 @@
       
       
       <!-- FOOTER -->
-      <footer class="py-12 text-center text-gray-500">
-        <span data-i18n="footer">© 2026 · Iván Arteta</span>
+      <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-gray-500" data-i18n="footer">© 2026 · Iván Arteta</span>
+          <nav class="flex items-center gap-6" aria-label="Enlaces del pie">
+            <a href="contact.html" class="text-gray-400 hover:text-white transition text-sm font-medium" data-i18n="contact">Contacto</a>
+            <a href="https://github.com/ivanarteta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-sm font-medium">GitHub</a>
+            <a href="https://www.linkedin.com/in/iv%C3%A1n-arteta-triguero-8712a0207/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition text-sm font-medium">LinkedIn</a>
+          </nav>
+        </div>
       </footer>
       
     <script type="module" src="/src/main.js"></script>
