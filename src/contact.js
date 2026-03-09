@@ -6,14 +6,12 @@ import emailjs from '@emailjs/browser'
 let currentLang = localStorage.getItem('lang') || 'es'
 let currentTheme = localStorage.getItem('theme') || 'dark'
 
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || ''
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || ''
+const EMAILJS_PUBLIC_KEY = 'UxgNssHj94NSUva69' 
+const EMAILJS_SERVICE_ID = 'service_iym7isa' 
+const EMAILJS_TEMPLATE_ID = 'template_l970j2k'
 
-// Inicializar EmailJS (solo si hay clave configurada)
-if (EMAILJS_PUBLIC_KEY) {
-  emailjs.init(EMAILJS_PUBLIC_KEY)
-}
+// Inicializar EmailJS
+emailjs.init(EMAILJS_PUBLIC_KEY)
 
 // Aplicar tema inicial
 function applyTheme(theme) {
