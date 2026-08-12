@@ -120,10 +120,10 @@ function validateForm(formData) {
     emptyFields.push(currentLang === 'es' ? 'email' : 'email')
   }
   if (!subject || subject.trim().length === 0) {
-    emptyFields.push(currentLang === 'es' ? 'asunto' : 'subject')
+    emptyFields.push(currentLang === 'es' ? 'proyecto o idea' : 'project or idea')
   }
   if (!message || message.trim().length === 0) {
-    emptyFields.push(currentLang === 'es' ? 'mensaje' : 'message')
+    emptyFields.push(currentLang === 'es' ? 'descripción' : 'description')
   }
   
   // Si hay campos vacíos, mostrar warning
@@ -163,8 +163,8 @@ function validateForm(formData) {
   if (subject.trim().length < 3) {
     showMessage(
       currentLang === 'es' 
-        ? 'El asunto debe tener al menos 3 caracteres' 
-        : 'Subject must be at least 3 characters',
+        ? 'El proyecto o idea debe tener al menos 3 caracteres' 
+        : 'Project or idea must be at least 3 characters',
       'error'
     )
     return false
@@ -173,8 +173,8 @@ function validateForm(formData) {
   if (message.trim().length < 10) {
     showMessage(
       currentLang === 'es' 
-        ? 'El mensaje debe tener al menos 10 caracteres' 
-        : 'Message must be at least 10 characters',
+        ? 'La descripción debe tener al menos 10 caracteres' 
+        : 'Description must be at least 10 characters',
       'error'
     )
     return false
